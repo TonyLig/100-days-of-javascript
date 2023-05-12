@@ -1,3 +1,4 @@
+/* START general style */
 *,
 *::before,
 *::after {
@@ -11,7 +12,9 @@ body {
   margin: 0;
   background: linear-gradient(to right, #00aaff, #00ff6c);
 }
+/* END general style */
 
+/* START calculator style */
 .calculetor-grid {
   display: grid;
   justify-content: center;
@@ -58,3 +61,4 @@ body {
   color: white;
   font-size: 2.5rem; 
 }
+/* END calculator style */
