@@ -61,6 +61,7 @@ section .container {
 
 form button {
   outline: none;
+  border: none;
   border: 1px solid #fff;
   padding: 8px;
   border-radius: 3px;
@@ -95,14 +96,14 @@ form button:hover {
   margin: 15% auto;
   padding: 2rem;
   border: 1px solid #777;
+  position: relative;
   text-align: center;
   animation: slide ease 0.8s;
-  position: relative;
 }
 
 @keyframes slide {
   0% {
-    transform: translateY(-30);
+    transform: translateY(-30rem);
   }
   100% {
     transform: translateY(0);
@@ -116,4 +117,17 @@ form button:hover {
   color: var(--color-primary);
   font-size: 2rem;
   cursor: pointer;
+}
+
+.slide-up {
+  animation: slide-up ease 0.8s;
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50rem);
+  }
 }
