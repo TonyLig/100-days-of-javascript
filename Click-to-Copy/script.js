@@ -1,18 +1,15 @@
-const word = document.querySelector(".input-text");
 const btn = document.querySelector(".btn");
-const result = document.querySelector(".result");
+const coupon = document.querySelector(".coupon");
 
-btn.addEventListener("click", countVowel);
+const copyText = function (e) {
+  e.preventDefault();
 
-function countVowel() {
-  let vowelCount = 0;
-  let wordVal = word.value.toLowerCase();
+  navigator.clipboard.writeText(coupon.value).then(() => {
+    btn.textContent = "Copied !";
+    setTimeout(() => {
+      btn.textContent = "Copy";
+    }, 3000);
+  });
+};
 
-  for (let i = 0; i < wordVal.length; i++) {
-    let letter = wordVal[i];
-    if (letter.match(/([a,e,i,o,u])/)) {
-      vowelCount++;
-    }
-  }
-  result.innerHTML = `${word.value.toUpperCase()} has ${vowelCount} vowels`;
-}
+btn.addEventListener("click", copyText);
